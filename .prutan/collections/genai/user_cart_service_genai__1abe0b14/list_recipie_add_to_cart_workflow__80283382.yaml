@@ -9,4 +9,4 @@ overview:
   priority: null
   summary: null
   description: null
-prompt: Send request get_all_recipes and then send post request add_to_cart
+prompt: 1. Send request get_all_recipes and then send post request add_to_cart

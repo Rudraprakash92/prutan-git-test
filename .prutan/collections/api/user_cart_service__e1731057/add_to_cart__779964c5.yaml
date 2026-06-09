@@ -6,7 +6,7 @@ collectionMessageRepType: null
 collectionAltUrl: null
 collectionIpConfig: null
 overview:
-  priority: null
+  priority: Medium
   summary: Adds items to cart via Core Router with request and response validation
   description: "<h3>Type</h3><p>API</p><p></p><h3>Format</h3><p>REST</p><p></p><h2>Body</h2><p><strong>Content-Type:</strong> <code>application/json</code></p><p>The request body contains all required data to add items to a cart.</p><p>\tuserId</p><p>\t\tGenerated dynamically using an <strong>InBuiltFunction</strong></p><p>\t\t{{$generateRandomNumber(12)}}</p><p>\tsessionId</p><p>\t\tInjected from <strong>environment variables</strong></p><p>\t\t{{sessionId}}</p><p>\titems</p><p>\t\tList of products to be added to the cart</p><p>\t\tEach item includes:</p><p>\t\t\tproductId</p><p>\t\t\tquantity</p><p></p><h2>Params</h2><table style=\"border: 1px solid #000;\"><tbody><tr><td data-row=\"1\">Name</td><td data-row=\"1\">Value</td><td data-row=\"1\">Description</td></tr><tr><td data-row=\"2\">currency</td><td data-row=\"2\">USD</td><td data-row=\"2\">Currency used for cart processing</td></tr></tbody></table><p></p><h2>Headers</h2><table style=\"border: 1px solid #000;\"><tbody><tr><td data-row=\"\
     1\">Header Name</td><td data-row=\"1\">Value</td><td data-row=\"1\">Description</td></tr><tr><td data-row=\"2\">content-type</td><td data-row=\"2\">application/json</td><td data-row=\"2\">Defines request payload format</td></tr><tr><td data-row=\"3\">X-Request-ID</td><td data-row=\"3\">76abf562-2235-435f-8aff-234c4511db44</td><td data-row=\"3\">Unique identifier for the request</td></tr></tbody></table><p></p><h2>PreRequestScript</h2><p>The pre-request script prepares and enriches the request before execution:</p><p>\tSets amount in the request body using the user balance from a previous API (get_user_details)</p><p>\tSets colleagues using the friends list from the same previous response</p><p>\tLogs product ID and full item list for debugging and traceability</p><p></p><h2>Validation</h2><p>Validations ensure both request and response correctness:</p><h3>Request Validation</h3><p>\tConfirms product IDs are correctly passed:</p><p>\t\titems[0].productId → P001</p><p>\t\titems[1].productId\
@@ -21,7 +21,7 @@ body: |-
       "sessionId": "{{sessionId}}",
       "products": [
           {
-              "id": 144,
+              "id": "{{$generateRandomNumber(3)}}",
               "quantity": 4
           },
           {
@@ -41,7 +41,8 @@ params:
 - name: currency
   value: USD
   enabled: true
-auth: null
+auth:
+  authType: none
 preRequisite: |-
   req.setBody("products[0].id", preRes.getBody("get_all_recipes", "recipes[0].id"));
   req.setBody("products[1].id", preRes.getBody("get_all_recipes", "recipes[1].id"));
@@ -58,4 +59,4 @@ reqConnRetry: null
 reqConnPersist: null
 headerSize: null
 msgRepresentation: null
-topicName: null
+topicName: ''

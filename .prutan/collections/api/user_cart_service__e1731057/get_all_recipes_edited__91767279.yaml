@@ -1,0 +1,34 @@
+guid: 91767279-51ed-43d1-a0ca-5592019f9397
+name: get_all_recipes_edited
+collectionFormat: GET
+collectionHeadersize: null
+collectionMessageRepType: null
+collectionAltUrl: null
+collectionIpConfig: null
+overview:
+  priority: null
+  summary: null
+  description: null
+format: REST
+method: GET
+endpoint: https://dummyjson.com/recipes
+contentType: null
+body: null
+headers: null
+params: null
+auth: null
+preRequisite: null
+rules: "// Check JSON response property\npv.test(\"Check JSON response property value\",\n\tres.isValuePresent(\"recipes[0].id\", 1),\n\tres.isValuePresent(\"recipes[0].name\", \"Classic Margherita Pizza\"),\n\tres.isValuePresent(\"recipes[1].ingredients[1]\", \"Broccoli florets\")\n);\n\n// Check JSON request property\npv.test(\"Check JSON request property value\", res.isValueNotPresent(\"recipes[0].name\", \"Classic Margherita Pizza\"));\n\n// Check JSON response property\npv.test(\"Check JSON response property exist\", res.isFieldPresent(\"recipes\"));\n\n\nprint(\"Recipes are :  \" + res.getBody('recipes[0]'));\nprint(\"Response is :  \" + res.getBody());"
+integration:
+  whatsapp: false
+  microsoftTeams: false
+  slack: false
+  email: false
+specGuid: null
+sslGuid: null
+reqTimeout: null
+reqConnRetry: null
+reqConnPersist: null
+headerSize: null
+msgRepresentation: null
+topicName: null
