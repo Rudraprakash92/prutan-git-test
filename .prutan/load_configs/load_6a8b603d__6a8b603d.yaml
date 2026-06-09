@@ -1,0 +1,31 @@
+guid: 6a8b603d-1ad8-4cdc-986c-8a7db76bd522
+collectionGuid: 6a8b603d-1ad8-4cdc-986c-8a7db76bd522
+type: constant
+volume: null
+duration: null
+timeout: 1000
+virtualUsers: 10
+delay: 0
+warmup: 0
+holdSpikeFor: null
+spikeUsers: null
+spikeInterval: null
+startAfter: null
+executionTimeout: 10000
+mode: duration
+rampUpPeriod: null
+startingValue: null
+incrementUser: null
+maximumValue: null
+minimumValue: null
+decrementUser: null
+buckets:
+- start: 0
+  end: 500
+- start: 501
+  end: 1000
+- start: 1001
+  end: 2000
+executionList:
+- guid: 779964c5-e63c-41f4-a891-999ca96d3281
+  uri: https://dummyjson.com/carts/add

@@ -1,0 +1,17 @@
+guid: e653b94a-d753-4100-81c9-3fa20cacf029
+name: E_Comm_Payment
+type: host
+format: ISO
+specGuid: 47ebf802-7547-47bf-9e0b-512468ae8660
+messageRepresentationType: bytes
+headerSize: '2'
+ipConfig:
+- guid: ef5edc70-4542-4bb8-8fb2-f5003b234ae5
+  teamGuid: 315cfc09-c993-443d-9b4d-f9726e6ca05b
+  ip: 0.0.0.0
+  tag: Allow All IPs
+altUrl: null
+overview:
+  priority: null
+  summary: null
+  description: null

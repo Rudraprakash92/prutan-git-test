@@ -1,0 +1,19 @@
+guid: 03bbe59f-ced8-4213-bc2a-bebfff8472ea
+name: Default Keys 2606080953
+mode: ECB
+type: crypto
+keys:
+  component1: D9EB277ED92ABAFA355A2917F8B94D71
+  component1_kcv: 5DC86E
+  component2: 18E7215B74AD5740E8CE87030ED4D37D
+  component2_kcv: 8C3343
+  component3: E9F0BA755AE771BE1D56BDF880AB2C2F
+  component3_kcv: '432584'
+  kek: 28FCBC50F7609C04C0C213EC76C6B223
+  kek_kcv: 31369F
+  pek: 78EB24740D10EE318975E654E04557EF
+  pek_kcv: 6596BE
+  mak: null
+  mak_kcv: null
+  tek: null
+  tek_kcv: null
