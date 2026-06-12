@@ -21,7 +21,7 @@ body: |-
       "sessionId": "{{sessionId}}",
       "products": [
           {
-              "id": "150",
+              "id": "{{$generateRandomNumber(1)}}",
               "quantity": 4
           },
           {
