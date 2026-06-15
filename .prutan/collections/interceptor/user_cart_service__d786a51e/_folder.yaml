@@ -1,0 +1,17 @@
+guid: d786a51e-5c85-4699-b0c4-136d24859f5b
+name: user_cart_service
+type: interceptor
+format: REST
+specGuid: null
+messageRepresentationType: null
+headerSize: null
+ipConfig:
+- guid: ef5edc70-4542-4bb8-8fb2-f5003b234ae5
+  teamGuid: 315cfc09-c993-443d-9b4d-f9726e6ca05b
+  ip: 0.0.0.0
+  tag: Allow All IPs
+altUrl: null
+overview:
+  priority: null
+  summary: null
+  description: null
