@@ -37,15 +37,16 @@ headers:
 - name: X-Request-ID
   value: cfbb2759-660c-4053-948f-1905aa6f17fd
   enabled: true
+- name: Age
+  value: '21'
+  enabled: false
 params:
 - name: currency
   value: USD
   enabled: true
 auth:
   authType: none
-preRequisite: |-
-  req.setBody("products[0].id", preRes.getBody("get_all_recipes", "recipes[0].id"));
-  req.setBody("products[1].id", preRes.getBody("get_all_recipes", "recipes[1].id"));
+preRequisite: "req.setBody(\"products[0].id\", preRes.getBody(\"get_all_recipes\", \"recipes[0].id\"));\nreq.setBody(\"products[1].id\", preRes.getBody(\"get_all_recipes\", \"recipes[1].id\"));\n \n// UNIX timestamp retrieval\n res.setBody(\"timestamp\", \"fn.timestamp()\");"
 rules: "// Check JSON response property\npv.test(\"Check JSON response property value\",\n\tres.isValuePresent(\"sessionId\", \"abcde-67890\"),\n\treq.isFieldPresent(\"products[0].id\"),\n\treq.isFieldPresent(\"products[1].id\")\n);\n\n// Check JSON request property\npv.test(\"Check JSON request property value\", req.isValueNotPresent(\"name\", \"Parth\"));\n\n// Check JSON response property\npv.test(\"Check JSON response property exist\", res.isFieldPresent(\"userId\"));\npv.test('Check response value', res.isFieldPresent('products'));\n\n\nprint(\"Items are :  \" + req.getBody('products'));\nprint(\"Response is :  \" + res.getBody());\nprint(\"Request is :  \" + req.getBody());"
 integration:
   whatsapp: false

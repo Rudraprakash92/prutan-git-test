@@ -3,7 +3,7 @@ collectionGuid: 6a8b603d-1ad8-4cdc-986c-8a7db76bd522
 type: constant
 volume: null
 duration: null
-timeout: 1000
+timeout: 2000
 virtualUsers: 10
 delay: 0
 warmup: 0
@@ -28,6 +28,10 @@ buckets:
   end: 2000
 - start: 2001
   end: 3000
+- start: 3001
+  end: 4000
 executionList:
+- guid: 6bfb7472-4a46-4b98-af19-13d8165e6aa3
+  uri: http://127.0.0.1:57591/prutan/exec/prutan/core/router/HB/20744164-3c31-4a07-985f-9009d6decb30
 - guid: 779964c5-e63c-41f4-a891-999ca96d3281
   uri: https://dummyjson.com/carts/add

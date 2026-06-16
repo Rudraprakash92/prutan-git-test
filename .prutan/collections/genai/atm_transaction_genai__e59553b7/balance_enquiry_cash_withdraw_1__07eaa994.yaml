@@ -1,0 +1,12 @@
+guid: 07eaa994-db4b-45f7-bb8e-67531ff18749
+name: balance_enquiry_cash_withdraw_1
+collectionFormat: null
+collectionHeadersize: null
+collectionMessageRepType: null
+collectionAltUrl: null
+collectionIpConfig: null
+overview:
+  priority: null
+  summary: null
+  description: null
+prompt: Start hostbox atm_transactions then start interceptor atm_transactions. then send request for balance_inquiry__mini_statement and then send request for cash withdrawl and validate response.

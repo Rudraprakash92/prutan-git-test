@@ -13,7 +13,7 @@ overview:
     \ message is <strong>realistic, consistent, and dynamically generated</strong> based on the incoming request.</p>"
 format: ISO
 method: '8583'
-endpoint: localhost:8000
+endpoint: 'localhost:'
 contentType: application/iso
 requestBody: |-
   <isomsg>
@@ -33,7 +33,7 @@ requestBody: |-
 responseBody: |-
   <isomsg>
     <field id="0" value="0110"/>
-    <field id="3" value="310000"/>
+    <field id="3" value="{{$echo()}}"/>
     <field id="4" value="{{$echo()}}"/>
     <!-- Function used to fetch the required value from the incoming request -->
     <field id="7" value="{{$echo()}}"/>
